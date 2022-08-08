@@ -47,15 +47,29 @@
 //   print(newText);
 // }
 
-void main() {
-  var netSalary = 8000;
-  var expenses = 8000;
+// void main() {
+//   var netSalary = 8000;
+//   var expenses = 8000;
 
-  if (netSalary > expenses) {
-    print('You have saved ${netSalary - expenses} this month');
-  } else if (expenses > netSalary) {
-    print('You have lost ${expenses - netSalary} this month');
-  } else {
-    print('Your balance hasn\'t changed');
+//   if (netSalary > expenses) {
+//     print('You have saved ${netSalary - expenses} this month');
+//   } else if (expenses > netSalary) {
+//     print('You have lost ${expenses - netSalary} this month');
+//   } else {
+//     print('Your balance hasn\'t changed');
+//   }
+// }
+
+void main() {
+  for (var i = 1; i <= 15; i++) {
+    if(i % 3 == 0 && i % 5 == 0) {
+      print('fizz buzz');
+    } else if(i % 3 == 0) {
+      print('fizz');
+    } else if(i % 5 == 0) {
+      print('buzz');
+    } else {
+      print(i);
+    }
   }
 }

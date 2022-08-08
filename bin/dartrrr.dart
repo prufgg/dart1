@@ -38,11 +38,24 @@
 //   return (temperature - 32) / 1.8;
 // }
 
+// void main() {
+//   const text = 'I like pizza';
+//   const topping = 'with tomatoes';
+//   var favourite = '$text $topping';
+//   final newText = favourite.replaceAll('pizza', 'pasta');
+//   favourite = 'Now I like curry';
+//   print(newText);
+// }
+
 void main() {
-  const text = 'I like pizza';
-  const topping = 'with tomatoes';
-  var favourite = '$text $topping';
-  final newText = favourite.replaceAll('pizza', 'pasta');
-  favourite = 'Now I like curry';
-  print(newText);
+  var netSalary = 8000;
+  var expenses = 8000;
+
+  if (netSalary > expenses) {
+    print('You have saved ${netSalary - expenses} this month');
+  } else if (expenses > netSalary) {
+    print('You have lost ${expenses - netSalary} this month');
+  } else {
+    print('Your balance hasn\'t changed');
+  }
 }

@@ -21,9 +21,19 @@
 //   print('I like $pizza and $pasta');
 // }
 
+// void main() {
+//   String title = 'Dart course';
+//   print(title);
+//   print(title.toUpperCase());
+//   print(title.toLowerCase());
+// }
+
 void main() {
-  String title = 'Dart course';
-  print(title);
-  print(title.toUpperCase());
-  print(title.toLowerCase());
+  final tempFarenheit = 92;
+  final celsius = farenheitToCelsius(tempFarenheit);
+  print(celsius.round());
+}
+
+num farenheitToCelsius(num temperature) {
+  return (temperature - 32) / 1.8;
 }

@@ -1,6 +1,11 @@
 void main() {
-  print(1);
-  print(2);
-  print(3);
-  print(4);
+  var firstName = 'Andrea';
+  var lastName = 'Bizzotto';
+  var age = 36;
+  var height = 1.84;
+
+  print(firstName);
+  print(lastName);
+  print(age);
+  print(height);
 }

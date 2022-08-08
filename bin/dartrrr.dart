@@ -28,12 +28,21 @@
 //   print(title.toLowerCase());
 // }
 
-void main() {
-  final tempFarenheit = 92;
-  final celsius = farenheitToCelsius(tempFarenheit);
-  print(celsius.round());
-}
+// void main() {
+//   final tempFarenheit = 92;
+//   final celsius = farenheitToCelsius(tempFarenheit);
+//   print(celsius.round());
+// }
 
-num farenheitToCelsius(num temperature) {
-  return (temperature - 32) / 1.8;
+// num farenheitToCelsius(num temperature) {
+//   return (temperature - 32) / 1.8;
+// }
+
+void main() {
+  const text = 'I like pizza';
+  const topping = 'with tomatoes';
+  var favourite = '$text $topping';
+  final newText = favourite.replaceAll('pizza', 'pasta');
+  favourite = 'Now I like curry';
+  print(newText);
 }

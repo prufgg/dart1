@@ -60,16 +60,39 @@
 //   }
 // }
 
+// void main() {
+//   for (var i = 1; i <= 15; i++) {
+//     if(i % 3 == 0 && i % 5 == 0) {
+//       print('fizz buzz');
+//     } else if(i % 3 == 0) {
+//       print('fizz');
+//     } else if(i % 5 == 0) {
+//       print('buzz');
+//     } else {
+//       print(i);
+//     }
+//   }
+// }
+
+enum Operation { plus, minus, multiply, divide }
+
 void main() {
-  for (var i = 1; i <= 15; i++) {
-    if(i % 3 == 0 && i % 5 == 0) {
-      print('fizz buzz');
-    } else if(i % 3 == 0) {
-      print('fizz');
-    } else if(i % 5 == 0) {
-      print('buzz');
-    } else {
-      print(i);
-    }
+  var a = 4;
+  var b = 2;
+  var op = Operation.plus;
+  final result = calculator(a, b, Operation.divide);
+  print(result);
+}
+
+num calculator(int a, int b, Operation operation) {
+  switch (operation) {
+    case Operation.plus:
+      return a + b;
+    case Operation.minus:
+      return a - b;
+    case Operation.multiply:
+      return a * b;
+    case Operation.divide:
+      return a / b;
   }
 }

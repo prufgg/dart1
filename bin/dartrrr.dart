@@ -115,22 +115,51 @@
 //   print(result);
 // }
 
+// void main() {
+//   var pizzaPrices = {
+//   'margherita': 5.5,
+//   'pepperoni': 7.5,
+//   'vegetarian': 6.5,
+//   };
+
+//   var order = ['margherita', 'pepperoni'];
+//   var total = 0.0;
+
+//   for (var item in order) {
+//     final price = pizzaPrices[item];
+//     if(price != null) {
+//       total += price;
+//     }
+//   }
+  
+//   print(total);
+// }
+
+import 'package:collection/collection.dart';
+
 void main() {
-  var pizzaPrices = {
-  'margherita': 5.5,
-  'pepperoni': 7.5,
-  'vegetarian': 6.5,
+  var restaurants = {
+    {
+      'name': 'Pizza Mario',
+      'cuisine': 'Italian',
+      'ratings': [4.0, 3.5, 4.5],
+    },
+    {
+      'name': 'Chez Anne',
+      'cuisine': 'French',
+      'ratings': [5.0, 4.5, 4.0],
+    },
+    {
+      'name': 'Navaratna',
+      'cuisine': 'Indian',
+      'ratings': [4.0, 4.5, 4.0],
+    },
   };
 
-  var order = ['margherita', 'pepperoni'];
-  var total = 0.0;
-
-  for (var item in order) {
-    final price = pizzaPrices[item];
-    if(price != null) {
-      total += price;
-    }
+    for (var restaurant in restaurants) {
+    final ratings = restaurant['ratings'] as List<double>;
+    final result = ratings.sum / ratings.length;
+    restaurant['avgRating'] = result;
+    print(restaurant['avgRating']);
   }
-  
-  print(total);
 }

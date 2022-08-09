@@ -105,12 +105,32 @@
 //   print(sum);
 // }
 
-void main() {
-  var a = {1, 3};
-  var b = {3, 5};
+// void main() {
+//   var a = {1, 3};
+//   var b = {3, 5};
 
-  var value = {a.first, b.last};
-  var result = a.first + b.last;
-  print(value);
-  print(result);
+//   var value = {a.first, b.last};
+//   var result = a.first + b.last;
+//   print(value);
+//   print(result);
+// }
+
+void main() {
+  var pizzaPrices = {
+  'margherita': 5.5,
+  'pepperoni': 7.5,
+  'vegetarian': 6.5,
+  };
+
+  var order = ['margherita', 'pepperoni'];
+  var total = 0.0;
+
+  for (var item in order) {
+    final price = pizzaPrices[item];
+    if(price != null) {
+      total += price;
+    }
+  }
+  
+  print(total);
 }

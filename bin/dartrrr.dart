@@ -97,10 +97,20 @@
 //   }
 // }
 
-import 'package:collection/collection.dart';
+// import 'package:collection/collection.dart';
+
+// void main() {
+//   final a = [1, 3, 5, 7, 9];
+//   final sum = a.sum;
+//   print(sum);
+// }
 
 void main() {
-  final a = [1, 3, 5, 7, 9];
-  final sum = a.sum;
-  print(sum);
+  var a = {1, 3};
+  var b = {3, 5};
+
+  var value = {a.first, b.last};
+  var result = a.first + b.last;
+  print(value);
+  print(result);
 }

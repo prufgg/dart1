@@ -74,25 +74,33 @@
 //   }
 // }
 
-enum Operation { plus, minus, multiply, divide }
+// enum Operation { plus, minus, multiply, divide }
+
+// void main() {
+//   var a = 4;
+//   var b = 2;
+//   var op = Operation.plus;
+//   final result = calculator(a, b, Operation.divide);
+//   print(result);
+// }
+
+// num calculator(int a, int b, Operation operation) {
+//   switch (operation) {
+//     case Operation.plus:
+//       return a + b;
+//     case Operation.minus:
+//       return a - b;
+//     case Operation.multiply:
+//       return a * b;
+//     case Operation.divide:
+//       return a / b;
+//   }
+// }
+
+import 'package:collection/collection.dart';
 
 void main() {
-  var a = 4;
-  var b = 2;
-  var op = Operation.plus;
-  final result = calculator(a, b, Operation.divide);
-  print(result);
-}
-
-num calculator(int a, int b, Operation operation) {
-  switch (operation) {
-    case Operation.plus:
-      return a + b;
-    case Operation.minus:
-      return a - b;
-    case Operation.multiply:
-      return a * b;
-    case Operation.divide:
-      return a / b;
-  }
+  final a = [1, 3, 5, 7, 9];
+  final sum = a.sum;
+  print(sum);
 }

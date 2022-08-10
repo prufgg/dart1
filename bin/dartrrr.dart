@@ -131,35 +131,52 @@
 //       total += price;
 //     }
 //   }
-  
+
 //   print(total);
 // }
 
-import 'package:collection/collection.dart';
+// import 'package:collection/collection.dart';
+
+// void main() {
+//   var restaurants = {
+//     {
+//       'name': 'Pizza Mario',
+//       'cuisine': 'Italian',
+//       'ratings': [4.0, 3.5, 4.5],
+//     },
+//     {
+//       'name': 'Chez Anne',
+//       'cuisine': 'French',
+//       'ratings': [5.0, 4.5, 4.0],
+//     },
+//     {
+//       'name': 'Navaratna',
+//       'cuisine': 'Indian',
+//       'ratings': [4.0, 4.5, 4.0],
+//     },
+//   };
+
+//     for (var restaurant in restaurants) {
+//     final ratings = restaurant['ratings'] as List<double>;
+//     final result = ratings.sum / ratings.length;
+//     restaurant['avgRating'] = result;
+//     print(restaurant['avgRating']);
+//   }
+// }
 
 void main() {
-  var restaurants = {
-    {
-      'name': 'Pizza Mario',
-      'cuisine': 'Italian',
-      'ratings': [4.0, 3.5, 4.5],
-    },
-    {
-      'name': 'Chez Anne',
-      'cuisine': 'French',
-      'ratings': [5.0, 4.5, 4.0],
-    },
-    {
-      'name': 'Navaratna',
-      'cuisine': 'Indian',
-      'ratings': [4.0, 4.5, 4.0],
-    },
+  const bananas = 5;
+  const apples = 6;
+  const grains = {
+    'pasta': '500g',
+    'rice': '1kg',
   };
+  const addGrains = true;
 
-    for (var restaurant in restaurants) {
-    final ratings = restaurant['ratings'] as List<double>;
-    final result = ratings.sum / ratings.length;
-    restaurant['avgRating'] = result;
-    print(restaurant['avgRating']);
-  }
+  final result = <String, dynamic>{
+    if (bananas > 0) ...{'bananas': bananas},
+    if (apples > 0) ...{'apples': apples},
+    if (addGrains) ...grains,
+  };
+  print(result);
 }

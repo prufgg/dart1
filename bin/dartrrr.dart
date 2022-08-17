@@ -181,12 +181,35 @@
 //   print(result);
 // }
 
+// void main() {
+//   final result = sum();
+//   print(result);
+// }
+
+// double sum() {
+//   double sum = [1, 2].fold(0, (p, c) => p + c);
+//   return sum;
+// }
+
 void main() {
-  final result = sum();
+  const pizzaPrices = {
+    'margherita': 5.5,
+    'pepperoni': 7.5,
+    'vegetarian': 6.5,
+  };
+
+  const order = ['margherita', 'pepperoni', 'pineapple'];
+  final result = sumOfOrder(order, pizzaPrices);
   print(result);
 }
 
-double sum() {
-  double sum = [1, 2].fold(0, (p, c) => p + c);
-  return sum;
+num sumOfOrder(order, pizzaPrices) {
+  var total = 0.0;
+  for (var item in order) {
+    final price = pizzaPrices[item];
+    if (price != null) {
+      total += price;
+    }
+  }
+  return total;
 }

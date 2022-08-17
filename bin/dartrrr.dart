@@ -164,19 +164,29 @@
 //   }
 // }
 
-void main() {
-  const bananas = 5;
-  const apples = 6;
-  const grains = {
-    'pasta': '500g',
-    'rice': '1kg',
-  };
-  const addGrains = true;
+// void main() {
+//   const bananas = 5;
+//   const apples = 6;
+//   const grains = {
+//     'pasta': '500g',
+//     'rice': '1kg',
+//   };
+//   const addGrains = true;
 
-  final result = <String, dynamic>{
-    if (bananas > 0) ...{'bananas': bananas},
-    if (apples > 0) ...{'apples': apples},
-    if (addGrains) ...grains,
-  };
+//   final result = <String, dynamic>{
+//     if (bananas > 0) ...{'bananas': bananas},
+//     if (apples > 0) ...{'apples': apples},
+//     if (addGrains) ...grains,
+//   };
+//   print(result);
+// }
+
+void main() {
+  final result = sum();
   print(result);
+}
+
+double sum() {
+  double sum = [1, 2].fold(0, (p, c) => p + c);
+  return sum;
 }

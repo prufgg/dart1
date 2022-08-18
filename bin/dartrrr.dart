@@ -252,25 +252,52 @@
 //   return orElse();
 // }
 
-class Person {
-  final String name;
-  final int age;
-  final int height;
+// class Person {
+//   final String name;
+//   final int age;
+//   final int height;
 
-  Person({
+//   Person({
+//     required this.name,
+//     required this.age,
+//     required this.height,
+//   });
+
+//   void printDescription() {
+//     print("My name is $name. I'm $age years old, I'm $height centimeters tall.");
+//   }
+// }
+
+// void main() {
+//   final person1 = Person(name: 'Rodion', age: 16, height: 180);
+//   final person2 = Person(name: 'Artur', age: 22, height: 183);
+//   person1.printDescription();
+//   person2.printDescription();
+// }    
+
+class Restaurant {
+  const Restaurant({
     required this.name,
-    required this.age,
-    required this.height,
+    required this.cuisine,
+    required this.ratings,
   });
+  final String name;
+  final String cuisine;
+  final List<double> ratings;
 
-  void printDescription() {
-    print("My name is $name. I'm $age years old, I'm $height centimeters tall.");
+  int get numRatings => ratings.length;
+  double? avgRating() {
+    if (ratings.isEmpty) {
+      return null;
+    }
+    final a = ratings.reduce((value, element) => value + element) / ratings.length;
+    print(a);
+    return null;
   }
 }
 
 void main() {
-  final person1 = Person(name: 'Rodion', age: 16, height: 180);
-  final person2 = Person(name: 'Artur', age: 22, height: 183);
-  person1.printDescription();
-  person2.printDescription();
+  final result = Restaurant(
+      name: 'Чайхона', cuisine: 'Middle Eastern', ratings: [3.5, 5.5, 2.5]);
+  result.avgRating();
 }

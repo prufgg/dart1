@@ -191,25 +191,43 @@
 //   return sum;
 // }
 
-void main() {
-  const pizzaPrices = {
-    'margherita': 5.5,
-    'pepperoni': 7.5,
-    'vegetarian': 6.5,
-  };
+// void main() {
+//   const pizzaPrices = {
+//     'margherita': 5.5,
+//     'pepperoni': 7.5,
+//     'vegetarian': 6.5,
+//   };
 
-  const order = ['margherita', 'pepperoni', 'pineapple'];
-  final result = sumOfOrder(order, pizzaPrices);
-  print(result);
+//   const order = ['margherita', 'pepperoni', 'pineapple'];
+//   final result = sumOfOrder(order, pizzaPrices);
+//   print(result);
+// }
+
+// num sumOfOrder(order, pizzaPrices) {
+//   var total = 0.0;
+//   for (var item in order) {
+//     final price = pizzaPrices[item];
+//     if (price != null) {
+//       total += price;
+//     }
+//   }
+//   return total;
+// }
+
+void main() {
+  var a = [1, 2, 3, 4];
+  final arr = where<int>(a, (value) => value % 2 == 0);
+
+  print(arr);
 }
 
-num sumOfOrder(order, pizzaPrices) {
-  var total = 0.0;
-  for (var item in order) {
-    final price = pizzaPrices[item];
-    if (price != null) {
-      total += price;
+List<T> where<T>(List<T> items, bool Function(T) s) {
+  var result = <T>[];
+
+  for (var item in items) {
+    if (s(item)) {
+      result.add(item);
     }
   }
-  return total;
+  return result;
 }

@@ -214,20 +214,40 @@
 //   return total;
 // }
 
+// void main() {
+//   var a = [1, 2, 3, 4];
+//   final arr = where<int>(a, (value) => value % 2 == 0);
+
+//   print(arr);
+// }
+
+// List<T> where<T>(List<T> items, bool Function(T) s) {
+//   var result = <T>[];
+
+//   for (var item in items) {
+//     if (s(item)) {
+//       result.add(item);
+//     }
+//   }
+//   return result;
+// }
+
 void main() {
   var a = [1, 2, 3, 4];
-  final arr = where<int>(a, (value) => value % 2 == 0);
-
+  final arr = firstWhere(a, (value) => value == 5, orElse: () => -1);
   print(arr);
 }
 
-List<T> where<T>(List<T> items, bool Function(T) s) {
-  var result = <T>[];
-
+T firstWhere<T>(
+  List<T> items,
+  bool Function(T) f, {
+  required T Function() orElse,
+}) {
   for (var item in items) {
-    if (s(item)) {
-      result.add(item);
+    if (f(item)) {
+      return item;
     }
   }
-  return result;
+  return orElse();
 }
+

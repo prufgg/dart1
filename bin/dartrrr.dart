@@ -1,3 +1,4 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 // void main() {
 //   var firstName = 'Andrea';
 //   var lastName = 'Bizzotto';
@@ -232,22 +233,44 @@
 //   return result;
 // }
 
-void main() {
-  var a = [1, 2, 3, 4];
-  final arr = firstWhere(a, (value) => value == 5, orElse: () => -1);
-  print(arr);
-}
+// void main() {
+//   var a = [1, 2, 3, 4];
+//   final arr = firstWhere(a, (value) => value == 5, orElse: () => -1);
+//   print(arr);
+// }
 
-T firstWhere<T>(
-  List<T> items,
-  bool Function(T) f, {
-  required T Function() orElse,
-}) {
-  for (var item in items) {
-    if (f(item)) {
-      return item;
-    }
+// T firstWhere<T>(
+//   List<T> items,
+//   bool Function(T) f, {
+//   required T Function() orElse,
+// }) {
+//   for (var item in items) {
+//     if (f(item)) {
+//       return item;
+//     }
+//   }
+//   return orElse();
+// }
+
+class Person {
+  final String name;
+  final int age;
+  final int height;
+
+  Person({
+    required this.name,
+    required this.age,
+    required this.height,
+  });
+
+  void printDescription() {
+    print("My name is $name. I'm $age years old, I'm $height centimeters tall.");
   }
-  return orElse();
 }
 
+void main() {
+  final person1 = Person(name: 'Rodion', age: 16, height: 180);
+  final person2 = Person(name: 'Artur', age: 22, height: 183);
+  person1.printDescription();
+  person2.printDescription();
+}

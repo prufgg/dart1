@@ -273,31 +273,79 @@
 //   final person2 = Person(name: 'Artur', age: 22, height: 183);
 //   person1.printDescription();
 //   person2.printDescription();
-// }    
+// }
 
-class Restaurant {
-  const Restaurant({
-    required this.name,
-    required this.cuisine,
-    required this.ratings,
-  });
-  final String name;
-  final String cuisine;
-  final List<double> ratings;
+// class Restaurant {
+//   const Restaurant({
+//     required this.name,
+//     required this.cuisine,
+//     required this.ratings,
+//   });
+//   final String name;
+//   final String cuisine;
+//   final List<double> ratings;
 
-  int get numRatings => ratings.length;
-  double? avgRating() {
-    if (ratings.isEmpty) {
-      return null;
-    }
-    final a = ratings.reduce((value, element) => value + element) / ratings.length;
-    print(a);
-    return null;
+//   int get numRatings => ratings.length;
+//   double? avgRating() {
+//     if (ratings.isEmpty) {
+//       return null;
+//     }
+//     final a = ratings.reduce((value, element) => value + element) / ratings.length;
+//     print(a);
+//     return null;
+//   }
+// }
+
+// void main() {
+//   final result = Restaurant(
+//       name: 'Чайхона', cuisine: 'Middle Eastern', ratings: [3.5, 5.5, 2.5]);
+//   result.avgRating();
+// }
+
+import 'dart:math';
+
+abstract class Shape {
+  double get area;
+  double get perimeter;
+  void printValues();
+}
+
+class Square extends Shape {
+  final double side;
+
+  @override
+  double get area => side * side;
+  @override
+  double get perimeter => side * 4;
+
+  Square(this.side);
+
+  @override
+  void printValues() {
+    print('Square perimeter:$perimeter. Square area: $area.');
+  }
+}
+
+class Circle extends Shape {
+  final double radius;
+
+  @override
+  double get area => pi * radius * radius;
+  @override
+  double get perimeter => 2 * pi * radius;
+
+  Circle(this.radius);
+
+  @override
+  void printValues() {
+    print('Circle perimeter:$perimeter. Circle area: $area.');
   }
 }
 
 void main() {
-  final result = Restaurant(
-      name: 'Чайхона', cuisine: 'Middle Eastern', ratings: [3.5, 5.5, 2.5]);
-  result.avgRating();
+  final List<Shape> listShapes = [Square(3), Square(4), Circle(2), Circle(5)];
+  for(var i = 0; i < listShapes.length; i++) {
+    listShapes[i].printValues();
+  }
+
 }
